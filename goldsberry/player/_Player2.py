@@ -127,7 +127,7 @@ class shot_chart(NBA_datapull):
         return self._get_table_from_data(self._datatables, 1)
 
 class PlayerList(NBA_datapull):
-    def __init__(self):
+    def __init__(self, year):
         NBA_datapull.__init__(self)
         self.SET_parameters(**p_ply_list)
         self._url_modifier = 'commonallplayers'
@@ -178,7 +178,7 @@ class general_splits(NBA_datapull):
     def days_rest(self):
         return self._get_table_from_data(self._datatables, 6)
 
-__all__ = ["demographics", "career_stats",  
+__all__ = ["demographics", "career_stats",
            "game_logs", "shot_dashboard", "rebound_dashboard",
-           "passing_dashboard", "defense_dashboard",  
+           "passing_dashboard", "defense_dashboard",
            "shot_chart"]

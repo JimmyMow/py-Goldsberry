@@ -47,7 +47,7 @@ class NBA_datapull(object):
     def GET_raw_data(self):
         self._get_nba_data(self._url_modifier,self.api_params)
     def SET_parameters(self, **kwargs):
-        for k,v in kwargs.iteritems():
+        for k,v in kwargs.items():
             self.api_params[k]=v
 
 class PLAYTYPE(object):
@@ -120,7 +120,7 @@ class SPORTVU(object):
         if team:
             team = 'Team'
         else: team = ''
-        pull_url = "{0}{1}/{2}{3}Data.json".format(base_url, 
+        pull_url = "{0}{1}/{2}{3}Data.json".format(base_url,
                                                 year, url_modifier,team)
         self._response = _requests.get(pull_url, params = api_params,
                                 headers = header_data)
@@ -152,7 +152,7 @@ class SPORTVU(object):
         elif kwargs.has_key('team'):
             if isinstance(kwargs['team'], (bool)):
                 self.team = kwargs['team']
-            else: 
+            else:
                 self.team = False
                 print('Please use True/False for team parameter')
         else:
